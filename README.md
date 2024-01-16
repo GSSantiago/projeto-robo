@@ -5,6 +5,7 @@
 <p align="center">
  <a href="#pencil2-descrição">Descrição</a> •
  <a href="#rocket-tecnologias">Tecnologias</a> •
+ <a href="#get-started">Como Instalar?</a>
  <a href="#computer-screenshot">ScreenShot</a>
 </p>
 
@@ -19,10 +20,36 @@
 
 As tecnologias utilizadas durante o estudo foram:
 
-- 💠 **React.Native** — Para construção das telas
--  **Expo** — Para build do aplicativo e facilidade nos testes e desenvolvimento
+- 💠 **React Native** — Para construção das telas
+-     **Expo** — Para build do aplicativo e facilidade nos testes e desenvolvimento
 
 
+## :get-started: Como Instalar?
+
+-  Instalar o [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/pt-br/download/) + NPX:
+
+```bash
+# Versões mínimas ou superiores.
+ node -v
+v14.15.4
+
+#Instalar NPX
+ npm install -g npx
+```
+
+```bash
+# Clonar o repositório
+ git clone [https://github.com/GSSantiago/Teste-Retornar-Acai](https://github.com/GSSantiago/projeto-robo.git)
+
+#Entrar no diretório
+ cd projeto-robo
+
+#Instalar as dependências
+ npx install
+
+#Iniciar o local host
+ npx expo start
+```
 
 ## :computer: Screenshot
 
