@@ -5,7 +5,7 @@
 <p align="center">
  <a href="#pencil2-descrição">Descrição</a> •
  <a href="#rocket-tecnologias">Tecnologias</a> •
- <a href="#get-started">Como Instalar?</a>
+ <a href="#instalação">Instalação</a> •
  <a href="#computer-screenshot">ScreenShot</a>
 </p>
 
@@ -24,7 +24,7 @@ As tecnologias utilizadas durante o estudo foram:
 -     **Expo** — Para build do aplicativo e facilidade nos testes e desenvolvimento
 
 
-## :get-started: Como Instalar?
+## Instalação
 
 -  Instalar o [Git](https://git-scm.com/), [NodeJS](https://nodejs.org/pt-br/download/) + NPX:
 
