@@ -39,7 +39,7 @@ v14.15.4
 
 ```bash
 # Clonar o repositório
- git clone [https://github.com/GSSantiago/Teste-Retornar-Acai](https://github.com/GSSantiago/projeto-robo.git)
+ git clone https://github.com/GSSantiago/projeto-robo.git
 
 #Entrar no diretório
  cd projeto-robo
