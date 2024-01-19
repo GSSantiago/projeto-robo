@@ -45,7 +45,7 @@ v14.15.4
  cd projeto-robo
 
 #Instalar as dependências
- npx install
+ npm install *OU* yarn
 
 #Iniciar o local host
  npx expo start
