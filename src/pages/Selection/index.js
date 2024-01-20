@@ -2,9 +2,9 @@ import { BottomView, TopView } from './styles';
 import Text from '../../components/Text';
 import Button from '../../components/Button';
 
-function Home({navigation}){
+function Selection({navigation}){
 
-    const goToSelection = () => navigation.goTo('Selection');
+    const goToScreen = (screen) => navigation.goTo(screen);
    
    return(<>
         <TopView>

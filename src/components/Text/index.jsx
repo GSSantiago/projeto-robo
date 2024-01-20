@@ -1,15 +1,14 @@
-import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import styled from 'styled-components';
 import colors from '../../../constants/colors';
 
-const Text = styled.Text`
+const Text = styled.span`
 
- font-size: ${({size}) => hp(size)}px;
+ font-size: ${({size}) => size || '16px'};
  color: ${({color}) => color || colors.white };
  width: 100%;
  text-align: center;
 
- ${({bold}) => bold ? 'font-weight: bold;' : ''}
+ font-weight: ${({weight}) => weight || '400'}
  
 `
 
