@@ -1,9 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { BottomWrapper, TopWrapper, SpanWrapper } from './styles';
 import Text from '../../components/Text';
 import Button from '../../components/Button';
 
 function Home(){
-
+   const navigate = useNavigate()
    
    return(<>
         <TopWrapper>
@@ -15,7 +16,7 @@ function Home(){
                 <Text size="4em" color="#3E1F62" weight="600">Bora lá?</Text>
 
             </SpanWrapper>
-            <Button>Prosseguir</Button>
+            <Button onClick={() => navigate('/chat')}>Prosseguir</Button>
         </BottomWrapper>
 
 
