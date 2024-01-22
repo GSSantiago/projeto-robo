@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 import styled from 'styled-components';
+import { TypeAnimation } from 'react-type-animation';
 
-function Robot({children}){
+
+function Robot({children, typeanimate}){
 
     const date = new Date();
     
@@ -14,7 +16,15 @@ function Robot({children}){
         <MessageWrapper>
             <Triangle/>
             <TopWrapper><h1>Robô</h1> <h2>Amigão do DC</h2></TopWrapper>
-            <p>{children}</p>
+            {typeanimate ? 
+                 <TypeAnimation
+                 sequence={[children]}
+                 speed={50}
+                 cursor={false}
+               />
+            :
+                <p>{children}</p>
+            }
             <BottomWrapper><h5>{date.toLocaleTimeString('pt-br', formatTime)}</h5></BottomWrapper>
         </MessageWrapper>
     
@@ -27,6 +37,8 @@ const MessageWrapper = styled.div`
   padding: 8px 8px 4px 8px;
   position: relative;
   margin-bottom: 36px;
+
+  width: fit-content;
 
   color: #000;
   background-color: #fff;

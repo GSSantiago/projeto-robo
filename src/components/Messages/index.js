@@ -1,3 +1,4 @@
 import Robot from "./Robot";
+import User from './User'
 
-export default {Robot};
+export default {Robot, User};
