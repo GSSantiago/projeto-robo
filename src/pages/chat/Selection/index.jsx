@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-
-import Messages from '../../components/Messages';
+import Messages from '../../../components/Messages';
 
 function SelectionChat(){
 
