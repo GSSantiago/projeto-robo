@@ -10,6 +10,8 @@ import MapChat from "./pages/chat/Map";
 import HelpChat from "./pages/chat/Help";
 import FeelingsChat from "./pages/chat/Feelings";
 import ContactsChat from "./pages/chat/Contacts";
+import LinguagemC from "./pages/chat/LinguagemC";
+import VisCmp from "./pages/chat/VisCmp";
 
 const routes = createBrowserRouter([
   {
@@ -36,8 +38,14 @@ const routes = createBrowserRouter([
     path: "/contacts",
     element: <Wrapper><ContactsChat/></Wrapper>
   },
-
-
+  {
+    path : "/Linguagem-c",
+    element: <Wrapper><LinguagemC/></Wrapper>,
+  },
+  {
+    path : "/VisCmp",
+    element: <Wrapper><VisCmp/></Wrapper>,
+  },
 ]);
 
 export default routes
