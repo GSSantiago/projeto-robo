@@ -3,6 +3,10 @@ import Messages from '../../../components/Messages';
 import Grid from '../../../components/Gridbox';
 import colors from '../../../../constants/colors';
 import styled from 'styled-components';
+import CalculoIMG from "/src/img/matematica.png";
+import VisCmpIMG from "/src/img/VisCmpImg.jpg";
+import LgnCIMG from "/src/img/LinguagemC.png";
+import MLIMG from "/src/img/MLimg.jpg";
 
 const CustomTitleClicable = styled.h4`
   font-size: 1.5em; /* Ajuste o tamanho da fonte conforme necessário */
@@ -34,16 +38,24 @@ function HelpChat() {
       <Grid.Wrapper>
         <Grid.Box onClick={navigateToLinguagemC}>
           <CustomTitleClicable>Linguagem C</CustomTitleClicable>
-          <p>
-            A linguagem C é essencial na computação, usada para desenvolver software de sistemas e aplicativos que exigem manipulação direta de memória.
-            É conhecida por sua eficiência e controle próximo do hardware.
-          </p>
+          <h4 style={{ height: '100px', marginTop: '20px' }}>
+            <p>
+              A linguagem C é essencial na computação, usada para desenvolver software de sistemas e aplicativos que exigem manipulação direta de memória.
+              É conhecida por sua eficiência e controle próximo do hardware.
+            </p>
+          </h4>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', height: '100px', marginTop: '20px' }}>
+          <img src={LgnCIMG} style={{ width: '80%', height: 'auto', borderRadius: '20px' }} alt="" />
+          </div>
         </Grid.Box>
 
         <Grid.Box bgColor={colors.yellow} color="#000">
           <CustomTitle>Cálculo I</CustomTitle>
           <p>
             Cálculo I introduz conceitos de limites, derivadas e integrais, essenciais para entender taxas de mudança e acumulação em várias áreas, como física e economia.
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', height: '300px', marginTop: '20px' }}>
+              <img src={CalculoIMG} style={{ width: '80%', height: 'auto', borderRadius: '20px' }} alt="" />
+            </div>
           </p>
         </Grid.Box>
 
@@ -52,6 +64,9 @@ function HelpChat() {
           <p>
             Machine Learning é um ramo da inteligência artificial focado em algoritmos que aprendem e fazem previsões a partir de dados, aplicado em áreas como diagnóstico médico e sistemas de recomendação.
           </p>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', height: '300px', marginTop: '20px' }}>
+          <img src={MLIMG} style={{ width: '80%', height: 'auto', borderRadius: '20px' }} alt="" />
+          </div>
         </Grid.Box>
 
         <Grid.Box onClick={navigateToVisCmp} bgColor={colors.yellow} color="#000">
@@ -59,6 +74,9 @@ function HelpChat() {
           <p>
             Visão Computacional permite que computadores interpretem o mundo visual, identificando objetos e cenas em imagens e vídeos, com aplicações em segurança, automação e análise médica.
           </p>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', height: '300px', marginTop: '20px' }}>
+          <img src={VisCmpIMG} style={{ width: '80%', height: 'auto', borderRadius: '20px' }} alt="" />
+          </div>
         </Grid.Box>
       </Grid.Wrapper>
     </>
