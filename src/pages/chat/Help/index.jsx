@@ -1,15 +1,30 @@
-
+import { useNavigate } from 'react-router-dom';
 import Messages from '../../../components/Messages';
 import Grid from '../../../components/Gridbox';
 import colors from '../../../../constants/colors';
 import styled from 'styled-components';
 
+const CustomTitleClicable = styled.h4`
+  font-size: 1.5em; /* Ajuste o tamanho da fonte conforme necessário */
+  text-align: center;
+  cursor: pointer;
+`;
 const CustomTitle = styled.h4`
   font-size: 1.5em; /* Ajuste o tamanho da fonte conforme necessário */
   text-align: center;
 `;
-
 function HelpChat() {
+
+  const navigate = useNavigate();
+  
+  const navigateToLinguagemC = () => {
+    navigate('/linguagem-c');
+  };
+
+  const navigateToVisCmp = () => {
+    navigate('/VisCmp');
+  };
+
   return (
     <>
       <Messages.Robot>
@@ -17,8 +32,8 @@ function HelpChat() {
       </Messages.Robot>
 
       <Grid.Wrapper>
-        <Grid.Box>
-          <CustomTitle>Linguagem C</CustomTitle>
+        <Grid.Box onClick={navigateToLinguagemC}>
+          <CustomTitleClicable>Linguagem C</CustomTitleClicable>
           <p>
             A linguagem C é essencial na computação, usada para desenvolver software de sistemas e aplicativos que exigem manipulação direta de memória.
             É conhecida por sua eficiência e controle próximo do hardware.
@@ -39,8 +54,8 @@ function HelpChat() {
           </p>
         </Grid.Box>
 
-        <Grid.Box bgColor={colors.yellow} color="#000">
-          <CustomTitle>Visão Computacional</CustomTitle>
+        <Grid.Box onClick={navigateToVisCmp} bgColor={colors.yellow} color="#000">
+          <CustomTitleClicable>Visão Computacional</CustomTitleClicable>
           <p>
             Visão Computacional permite que computadores interpretem o mundo visual, identificando objetos e cenas em imagens e vídeos, com aplicações em segurança, automação e análise médica.
           </p>
