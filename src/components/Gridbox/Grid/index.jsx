@@ -1,15 +1,14 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.div`
- display: grid;
+  display: grid;
 
- height: 100%;
+  height: 100%;
 
- grid-auto-flow: column;
- grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
 
- gap: 32px;
- 
-`
+  gap: 20px;
+`;
 
 export default Wrapper;
