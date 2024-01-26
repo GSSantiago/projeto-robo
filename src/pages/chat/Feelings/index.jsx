@@ -10,7 +10,7 @@ function FeelingsChat() {
   useEffect(() => {
     // Initialize MorphCast API
     CY.loader()
-      .licenseKey("skd771eb20994b29b0807ea4bc641ecca4b026c8b959cb")
+      .licenseKey("sk3295b7530925aeef0db70edca86c715cef5060c54479")
       .addModule(CY.modules().FACE_AROUSAL_VALENCE.name, { smoothness: 0.7 })
       .addModule(CY.modules().FACE_EMOTION.name, { smoothness: 0.4 })
       .addModule(CY.modules().FACE_ATTENTION.name, { smoothness: 0.83 })
