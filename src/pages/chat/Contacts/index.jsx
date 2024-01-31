@@ -18,23 +18,38 @@ function ContactsChat(){
       <Grid.Wrapper>
          <Grid.Box>
          <p>
-            Dr. João Martins (joao.martins@deptocomp.edu): Assistente administrativo, seu contato é vital para questões administrativas e logísticas.
-            Dr. Rafael Torres (rafael.torres@deptocomp.edu): Coordenador de estágios, é a pessoa de contato para alunos interessados em oportunidades de estágio e orientação profissional.
-            Prof. Carlos Silva (carlos.silva@deptocomp.edu): Especialista em Inteligência Artificial, conhecido por sua abordagem prática e disponibilidade para orientar projetos de alunos.
-            Prof. Marcos Rocha (marcos.rocha@deptocomp.edu): Especializado em Redes de Computadores, é conhecido por sua habilidade em explicar conceitos complexos de forma clara.
+            <strong>Dr. João Martins (joao.martins@deptocomp.edu):</strong> Assistente administrativo, seu contato é vital para questões administrativas e logísticas.<br />
+            <strong>Dr. Rafael Torres (rafael.torres@deptocomp.edu):</strong> Coordenador de estágios, é a pessoa de contato para alunos interessados em oportunidades de estágio e orientação profissional.<br />
+            <strong>Prof. Carlos Silva (carlos.silva@deptocomp.edu):</strong> Especialista em Inteligência Artificial, conhecido por sua abordagem prática e disponibilidade para orientar projetos de alunos.<br />
+            <strong>Prof. Marcos Rocha (marcos.rocha@deptocomp.edu):</strong> Especializado em Redes de Computadores, é conhecido por sua habilidade em explicar conceitos complexos de forma clara.<br />
          </p>
          </Grid.Box>
 
          <Grid.Box bgColor={colors.yellow} color="#000">
-            <p>Teste 2</p>
+         <p>
+            <strong>Dr. João Martins (joao.martins@deptocomp.edu):</strong> Assistente administrativo, seu contato é vital para questões administrativas e logísticas.<br />
+            <strong>Dr. Rafael Torres (rafael.torres@deptocomp.edu):</strong> Coordenador de estágios, é a pessoa de contato para alunos interessados em oportunidades de estágio e orientação profissional.<br />
+            <strong>Prof. Carlos Silva (carlos.silva@deptocomp.edu)</strong>: Especialista em Inteligência Artificial, conhecido por sua abordagem prática e disponibilidade para orientar projetos de alunos.<br />
+            <strong>Profª. Ana Pereira (ana.pereira@deptocomp.edu):</strong> Coordenadora do curso, oferece suporte acadêmico e orientação sobre a estrutura do curso e oportunidades de pesquisa.<br />
+         </p>
          </Grid.Box>
 
          <Grid.Box>
-            <p>Teste 3</p>
+            <p>
+            <strong>Dr. João Martins (joao.martins@deptocomp.edu):</strong> Assistente administrativo, seu contato é vital para questões administrativas e logísticas.<br />
+            <strong>Dr. Rafael Torres (rafael.torres@deptocomp.edu):</strong> Coordenador de estágios, é a pessoa de contato para alunos interessados em oportunidades de estágio e orientação profissional.<br />
+            <strong>Prof. Carlos Silva (carlos.silva@deptocomp.edu):</strong> Especialista em Inteligência Artificial, conhecido por sua abordagem prática e disponibilidade para orientar projetos de alunos.<br />
+            <strong>Prof. Marcos Rocha (marcos.rocha@deptocomp.edu):</strong> Especializado em Redes de Computadores, é conhecido por sua habilidade em explicar conceitos complexos de forma clara.<br />
+            </p>
          </Grid.Box>
 
          <Grid.Box bgColor={colors.yellow} color="#000">
-            <p>Teste 4</p>
+            <p>
+            <strong>Dr. João Martins (joao.martins@deptocomp.edu):</strong> Assistente administrativo, seu contato é vital para questões administrativas e logísticas.<br />
+            <strong>Dr. Rafael Torres (rafael.torres@deptocomp.edu):</strong> Coordenador de estágios, é a pessoa de contato para alunos interessados em oportunidades de estágio e orientação profissional.<br />
+            <strong>Prof. Carlos Silva (carlos.silva@deptocomp.edu)</strong>: Especialista em Inteligência Artificial, conhecido por sua abordagem prática e disponibilidade para orientar projetos de alunos.<br />
+            <strong>Profª. Ana Pereira (ana.pereira@deptocomp.edu):</strong> Coordenadora do curso, oferece suporte acadêmico e orientação sobre a estrutura do curso e oportunidades de pesquisa.<br />
+            </p>
          </Grid.Box>
       </Grid.Wrapper>
    

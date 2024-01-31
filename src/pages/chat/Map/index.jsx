@@ -1,25 +1,21 @@
-
-
-
 import Messages from '../../../components/Messages';
 import { MapView } from './styles';
+import Mapa from "/src/img/LE1.jpg";
 
-
-function MapChat(){
-
-   return(
-   <>
+function MapChat() {
+  return (
+    <>
       <Messages.Robot>
-         Olá! Eu sou o seu colega de curso, nascido com a mais recente tecnologia para estudar e aprender sobre programação e o dia a dia. Estou estudando diversas matérias
-         e posso ajudá-lo de diversas maneiras caso precise. Você esta precisando de algo ? Se você permitir, posso analisar a sua feição e assim podemos conversar 
-         sobre o que você está sentindo agora, ou, talvez queira saber onde fica as salas aqui no nosso departamento, já sei, você quer saber as curiosidades da faculdade 
-         com a computação ?  
+        Ótimo, estou aqui para auxiliá-lo a se orientar. Por favor, observe o mapa fornecido abaixo. Os LE's estão identificados com nomes e números, enquanto as salas que 
+        abrigam alguns funcionários estão marcadas com suas respectivas designações. Além disso, você encontrará a localização das salas de projetos de extensão, o Centro 
+        Acadêmico, nosso auditório e diversas outras salas importantes!
       </Messages.Robot>
-
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', marginTop: '-20px' }}>
+        <img src={Mapa} style={{ width: '75%', height: 'auto' }} alt="Mapa" />
+      </div>
       <MapView></MapView>
-
-   </>)
-
+    </>
+  );
 }
 
 export default MapChat;
