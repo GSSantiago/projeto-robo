@@ -70,7 +70,7 @@ function SelectionChat(){
       }
       
    {!!isActive && 
-      <Messages.Robot typeanimate="true">
+      <Messages.Robot typeanimate="true" fitContent>
          {userMessages.find(message => message.id == isActive)?.response || 'Ótimo, vamos lá então.'}
       </Messages.Robot>
     }

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { TypeAnimation } from 'react-type-animation';
 
 
-function Robot({children, typeanimate}){
+function Robot({children, typeanimate, fitContent}){
 
     const date = new Date();
     
@@ -13,7 +13,7 @@ function Robot({children, typeanimate}){
       };
 
    return(<>
-        <MessageWrapper>
+        <MessageWrapper fitContent={fitContent}>
             <Triangle/>
             <TopWrapper><h1>Robô</h1> <h2>Amigão do DC</h2></TopWrapper>
             {typeanimate ? 
@@ -38,7 +38,7 @@ const MessageWrapper = styled.div`
   position: relative;
   margin-bottom: 36px;
 
-  width: fit-content;
+  width: ${({fitContent}) => fitContent ? "fit-content"  :"100%"};
 
   color: #000;
   background-color: #fff;
