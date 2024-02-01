@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+import ReactLoading from 'react-loading';
 
 import Messages from "../../../components/Messages";
 
 function FeelingsChat() {
-  const [emotion, setEmotion] = useState("");
+  const [emotions, setEmotions] = useState([]);
   const [isAllow, setIsAllow] = useState(false);
   const [isActive, setActive] = useState(0);
 
@@ -16,7 +18,7 @@ function FeelingsChat() {
     {
       id: 4,
       content: 'Sim, pode analisar a minha feição',
-      onClick: () => setIsAllow(true)
+      onClick: () => allowAnalyze()
     },
     {
       id: 5,
@@ -26,10 +28,19 @@ function FeelingsChat() {
    },
   ]
 
+  const allowAnalyze = () => {
+    setTimeout(() => 
+    {
+      setIsAllow(true)
+      initializeMorph()
+    }
+    , 2500)
+  }
+
   const statsConfig = {
     sendDatainterval: 5000,
     tickInterval: 1000,
-    stopAfter: 7200000,
+    stopAfter: 8000,
     licenseKey: "skd771eb20994b29b0807ea4bc641ecca4b026c8b959cb",
   };
   const statisticsUploader = new MorphCastStatistics.StatisticsUploader(
@@ -89,57 +100,50 @@ function FeelingsChat() {
        }, statsConfig.stopAfter);
      });
 
-   const handleEmotionData = (evt) => {
-     console.log("Event detail:", evt.detail); // Add this line to inspect the data
+  //  window.addEventListener(
+  //    CY.modules().FACE_AROUSAL_VALENCE.eventName,
+  //    (evt) => {
+  //      console.log("FACE_AROUSAL_VALENCE detail", evt.detail);
 
-     const emotionData = Array.isArray(evt.detail)
-       ? evt.detail.find((data) => data.type === "FACE_EMOTION")
-       : null;
-
-     if (emotionData && emotionData.emotion) {
-       setEmotion(emotionData.emotion);
-     }
-   };
-
-   window.addEventListener(
-     CY.modules().FACE_AROUSAL_VALENCE.eventName,
-     (evt) => {
-       console.log("FACE_AROUSAL_VALENCE detail", evt.detail);
-
-     }
-   );
+  //    }
+  //  );
 
    let emotionData = []; // Array to store emotion data
 
    // Event listener for MorphCast API to get emotion data
    window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
-     console.log("FACE_EMOTION detail", evt.detail);
+     // console.log("FACE_EMOTION detail", evt.detail);
 
      const dominantEmotion = evt.detail.output.dominantEmotion;
      const currentTime = new Date().toLocaleTimeString();
 
-     console.log(`Dominant Emotion at ${currentTime}:`, dominantEmotion);
+    //console.log(`Dominant Emotion at ${currentTime}:`, dominantEmotion);
 
      emotionData.push({ time: currentTime, emotion: dominantEmotion });
 
-     // Update the state with the latest dominant emotion
-     setEmotion(dominantEmotion);
+     setEmotions(emotionData);
    });
 
    // Cleanup
    return () => {
-     window.removeEventListener(
-       CY.modules().FACE_EMOTION.eventName,
-       handleEmotionData
-     );
+     window.removeEventListener(CY.modules().FACE_EMOTION.eventName);
    }; 
   }
 
   const redirectTo = (link) => { setTimeout(() => navigate(link), 4000)}
 
-  if(isAllow) return(
-  <>
-  </>)
+  useEffect(() => {
+    console.log(emotions)
+  }, [emotions])
+
+  if(isAllow) 
+  return(
+    <>
+    <div style={{display: 'flex', justifyContent: 'center', height: '80vh', alignItems: 'center'}}>
+      <ReactLoading type="spin" height="200px" width="200px"/>
+      </div>
+    </>
+  )
 
   return (
     <>
