@@ -1,8 +1,11 @@
 function findModeInArray(emotions) {
+  // Filtrar emoções undefined
+  const filteredEmotions = emotions.filter((emotion) => emotion !== undefined);
+
   const frequencyMap = {};
 
-  // Contar a frequência de cada emoção
-  emotions.forEach((emotion) => {
+  // Contar a frequência de cada emoção no array filtrado
+  filteredEmotions.forEach((emotion) => {
     if (frequencyMap[emotion]) {
       frequencyMap[emotion]++;
     } else {
