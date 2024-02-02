@@ -1,11 +1,13 @@
 function findModeInArray(emotions) {
-  // Filtrar emoções undefined
-  const filteredEmotions = emotions.filter((emotion) => emotion !== undefined);
+  // Normalizar as emoções: minúsculas e sem espaços
+  const normalizedEmotions = emotions.map((emotion) =>
+    emotion.toLowerCase().replace(/\s+/g, "")
+  );
 
   const frequencyMap = {};
 
-  // Contar a frequência de cada emoção no array filtrado
-  filteredEmotions.forEach((emotion) => {
+  // Contar a frequência de cada emoção normalizada
+  normalizedEmotions.forEach((emotion) => {
     if (frequencyMap[emotion]) {
       frequencyMap[emotion]++;
     } else {
@@ -26,7 +28,7 @@ function findModeInArray(emotions) {
   }
 
   // Retorna a moda. Se houver múltiplas emoções com a mesma frequência máxima, todas serão retornadas.
-  return mode;
+  return mode.length === 1 ? mode[0] : mode;
 }
 
 export default findModeInArray;
