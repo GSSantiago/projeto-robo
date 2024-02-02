@@ -2,11 +2,11 @@
 import styled, {keyframes } from 'styled-components';
 import colors from '../../../../constants/colors';
 
-function User({children, isActive, onClick, seconds}){
+function User({children, isActive, onClick, width, seconds}){
 
 
    return(<>
-        <MessageWrapper onClick={onClick} seconds={seconds}>
+        <MessageWrapper onClick={onClick} seconds={seconds} width={width}>
             <Triangle/>
             {onClick && <Checkbox isActive={isActive ? "true" : ""}/> } 
             <div>
@@ -43,7 +43,7 @@ animation: ${showMessage} ${({seconds}) => seconds || '2'}s linear;
   margin-bottom: 36px;
   margin-left: auto;
   margin-right: 16px;
-  width: fit-content;
+  width: ${({width}) => width ? width  : "fit-content"};
 
   display: flex;
   align-items: center;

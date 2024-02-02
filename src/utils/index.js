@@ -1,6 +1,6 @@
 function findModeInArray(emotions) {
   // Filtrar emoções undefined
-  const filteredEmotions = emotions.filter((emotion) => emotion !== undefined);
+  const filteredEmotions = emotions.filter((emotion) => emotion);
 
   const frequencyMap = {};
 

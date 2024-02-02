@@ -5,6 +5,7 @@ import ReactLoading from 'react-loading';
 
 import Messages from "../../../components/Messages";
 import findModeInArray from "../../../utils";
+import Feelings from "../../../components/Feelings";
 // import useRobotFace from "../../../hooks/robotFace";
 
 function FeelingsChat() {
@@ -13,7 +14,7 @@ function FeelingsChat() {
   const [isAllow, setIsAllow] = useState(false);
   const [isActive, setActive] = useState(0);
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   // const { changeExpression } = useRobotFace()
 
@@ -135,11 +136,11 @@ function FeelingsChat() {
 
   useEffect(() => {
     if(emotions.length > 0){
-      const emotion = findModeInArray(emotions)
+      setLoading(false)
+      console.log("Emoções", emotions)
       setDomEmotion(findModeInArray(emotions))
-      redirectTo(`/feelings/${emotion}`)
     }
-  }, [emotions])
+  }, [emotions, domEmotion])
 
   if(isAllow) 
     return(
@@ -158,6 +159,9 @@ function FeelingsChat() {
               essas palavras ?   
             </p>
           </Messages.Robot>
+          {domEmotion &&
+          <Feelings dominantEmotion={domEmotion}/>
+}
         </>
     }
   </>
