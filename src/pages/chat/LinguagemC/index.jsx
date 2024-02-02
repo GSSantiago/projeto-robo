@@ -27,9 +27,10 @@ function LinguagemCChat(){
         <Grid.Box bgColor={colors.yellow} color="#000">
         <h4 style={{textAlign: 'center'}}>EXEMPLO:</h4>
         <p>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', height: '100vh', marginTop: '20px' }}>
-            <img src={ProgC} style={{ width: '104%', height: 'auto' }} alt="Exemplo de Programação em C" />
-            </div>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', height: '100vh', marginTop: '20px' }}>
+          <img src={ProgC} style={{ width: '104%', height: 'auto', borderRadius: '10px' }} alt="Exemplo de Programação em C" />
+          </div>
+
         </p>
         </Grid.Box>
 
