@@ -25,8 +25,7 @@ function findModeInArray(emotions) {
     }
   }
 
-  // Retorna a moda. Se houver múltiplas emoções com a mesma frequência máxima, todas serão retornadas.
-  return mode;
+  return mode[0].toLowerCase();
 }
 
 export default findModeInArray;

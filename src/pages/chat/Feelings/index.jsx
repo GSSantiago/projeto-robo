@@ -4,24 +4,21 @@ import { useNavigate } from "react-router-dom";
 import ReactLoading from 'react-loading';
 
 import Messages from "../../../components/Messages";
-import { getExpressionList } from "../../../services/morphcast";
+import findModeInArray from "../../../utils";
+// import useRobotFace from "../../../hooks/robotFace";
 
 function FeelingsChat() {
   const [emotions, setEmotions] = useState([]);
+  const [domEmotion, setDomEmotion] = useState("");
   const [isAllow, setIsAllow] = useState(false);
   const [isActive, setActive] = useState(0);
 
+  const [loading, setLoading] = useState(false)
+
+  // const { changeExpression } = useRobotFace()
+
 
   const navigate = useNavigate();
-
-  // async function fetchExpressionList(){
-  //   try{
-  //     const list = await getExpressionList();
-  //     console.log(list)
-  //   }catch(error){
-  //     console.log(error)
-  //   }
-  // }
 
 
   const userMessages = [
@@ -110,26 +107,15 @@ function FeelingsChat() {
        }, statsConfig.stopAfter);
      });
 
-  //  window.addEventListener(
-  //    CY.modules().FACE_AROUSAL_VALENCE.eventName,
-  //    (evt) => {
-  //      console.log("FACE_AROUSAL_VALENCE detail", evt.detail);
-
-  //    }
-  //  );
 
    let emotionData = []; // Array to store emotion data
 
    // Event listener for MorphCast API to get emotion data
    window.addEventListener(CY.modules().FACE_EMOTION.eventName, (evt) => {
-     // console.log("FACE_EMOTION detail", evt.detail);
 
      const dominantEmotion = evt.detail.output.dominantEmotion;
-     const currentTime = new Date().toLocaleTimeString();
 
-    //console.log(`Dominant Emotion at ${currentTime}:`, dominantEmotion);
-
-     emotionData.push({ time: currentTime, emotion: dominantEmotion });
+     emotionData.push(dominantEmotion);
 
      setEmotions(emotionData);
    });
@@ -142,15 +128,40 @@ function FeelingsChat() {
 
   const redirectTo = (link) => { setTimeout(() => navigate(link), 4000)}
 
+  // useEffect(() => {
+  //   console.log("UseEffect")
+  //   changeExpression(9)
+  // }, [])
+
+  useEffect(() => {
+    if(emotions.length > 0){
+      const emotion = findModeInArray(emotions)
+      setDomEmotion(findModeInArray(emotions))
+      redirectTo(`/feelings/${emotion}`)
+    }
+  }, [emotions])
 
   if(isAllow) 
-  return(
-    <>
-    <div style={{display: 'flex', justifyContent: 'center', height: '80vh', alignItems: 'center'}}>
-      <ReactLoading type="spin" height="200px" width="200px"/>
-      </div>
-    </>
-  )
+    return(
+  <>
+    {loading ?
+        <>
+        <div style={{display: 'flex', justifyContent: 'center', height: '80vh', alignItems: 'center'}}>
+          <ReactLoading type="spin" height="200px" width="200px"/>
+          </div>
+        </>
+        : 
+        <>
+          <Messages.Robot>
+            <p>
+              Que pessoa bonita você é, além da sua beleza, pude notar que você está sentindo muita coisa, me diga se você fosse se descrever em três palavras agora, quais seriam
+              essas palavras ?   
+            </p>
+          </Messages.Robot>
+        </>
+    }
+  </>
+    )
 
   return (
     <>
