@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ReactLoading from 'react-loading';
 
 import Messages from "../../../components/Messages";
+import { getExpressionList } from "../../../services/morphcast";
 
 function FeelingsChat() {
   const [emotions, setEmotions] = useState([]);
@@ -12,6 +13,15 @@ function FeelingsChat() {
 
 
   const navigate = useNavigate();
+
+  // async function fetchExpressionList(){
+  //   try{
+  //     const list = await getExpressionList();
+  //     console.log(list)
+  //   }catch(error){
+  //     console.log(error)
+  //   }
+  // }
 
 
   const userMessages = [
@@ -132,9 +142,6 @@ function FeelingsChat() {
 
   const redirectTo = (link) => { setTimeout(() => navigate(link), 4000)}
 
-  useEffect(() => {
-    console.log(emotions)
-  }, [emotions])
 
   if(isAllow) 
   return(

@@ -1,10 +1,11 @@
-import {get, post} from './api'
+import { get } from './api'
 
 //Exemplos
-const getMorphcast = get('https://www.exemplo.com.br/getMorphCast');
-const postMorphcast = post('https://www.exemplo.com.br/postMorphCast');
+const changeExpression = async (expressionNumber) => get(`/led/changeExpression/${expressionNumber}`);
+const changeExpressionByBits = async (expressionBits) => get(`/led/ changeExpressionByBits/${expressionBits}`);
+const getExpressionList = async () => get(`/led/getExpressionList`);
 
 //Link para ajuda https://dev.to/nilanth/how-to-use-axios-in-an-optimized-and-scalable-way-with-react-518n
 
 
-export { getMorphcast, postMorphcast }
+export { changeExpression, changeExpressionByBits, getExpressionList }
