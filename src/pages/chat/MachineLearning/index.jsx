@@ -1,7 +1,7 @@
 import Messages from "../../../components/Messages";
 import Grid from "../../../components/Gridbox";
 import colors from "../../../../constants/colors";
-import MLExample from "/src/img/MLExample.png"; // Substitua pelo caminho correto da imagem
+import MLExample from "/src/img/MLimg.jpg"; // Substitua pelo caminho correto da imagem
 
 function MachineLearningChat() {
   return (

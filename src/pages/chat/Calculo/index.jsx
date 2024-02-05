@@ -1,7 +1,7 @@
 import Messages from "../../../components/Messages";
 import Grid from "../../../components/Gridbox";
 import colors from "../../../../constants/colors";
-import CalculusExample from "/src/img/CalculusExample.png"; // Substitua pelo caminho correto da imagem
+import CalculusExample from "/src/img/matematica.png"; // Substitua pelo caminho correto da imagem
 
 function Calculo1Chat() {
   return (

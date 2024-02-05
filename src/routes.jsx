@@ -11,6 +11,8 @@ import ContactsChat from "./pages/chat/Contacts";
 import LinguagemC from "./pages/chat/LinguagemC";
 import VisCmp from "./pages/chat/VisCmp";
 import EmotionChat from "./pages/chat/Emotion";
+import Calculo1Chat from "./pages/chat/Calculo";
+import MachineLearningChat from "./pages/chat/MachineLearning";
 
 const routes = createBrowserRouter([
   {
@@ -78,6 +80,24 @@ const routes = createBrowserRouter([
     element: (
       <Wrapper>
         <VisCmp />
+      </Wrapper>
+    ),
+  },
+
+  {
+    path: "/Calculo",
+    element: (
+      <Wrapper>
+        <Calculo1Chat />
+      </Wrapper>
+    ),
+  },
+
+  {
+    path: "/MachineLearning",
+    element: (
+      <Wrapper>
+        <MachineLearningChat />
       </Wrapper>
     ),
   },
