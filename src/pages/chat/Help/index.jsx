@@ -29,6 +29,14 @@ function HelpChat() {
     navigate("/VisCmp");
   };
 
+  const navigateCalculo = () => {
+    navigate("/Calculo");
+  };
+
+  const navigateMachineLearning = () => {
+    navigate("/MachineLearning");
+  };
+
   const boxContentStyle = {
     display: "flex",
     flexDirection: "column",
@@ -65,7 +73,12 @@ function HelpChat() {
           <img src={LgnCIMG} style={imageStyle} alt="Linguagem C" />
         </Grid.Box>
 
-        <Grid.Box bgColor={colors.yellow} color="#000" style={boxContentStyle}>
+        <Grid.Box
+          onClick={navigateCalculo}
+          bgColor={colors.yellow}
+          color="#000"
+          style={boxContentStyle}
+        >
           <CustomTitle>Cálculo I</CustomTitle>
           <p>
             Cálculo I introduz conceitos de limites, derivadas e integrais,
@@ -75,7 +88,7 @@ function HelpChat() {
           <img src={CalculoIMG} style={imageStyle} alt="Cálculo I" />
         </Grid.Box>
 
-        <Grid.Box style={boxContentStyle}>
+        <Grid.Box onClick={navigateMachineLearning} style={boxContentStyle}>
           <CustomTitle>Machine Learning</CustomTitle>
           <p>
             Machine Learning é um ramo da inteligência artificial focado em
